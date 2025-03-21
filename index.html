@@ -63,7 +63,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="fee-info">+5% Fee</div>
+        <div class="fee-info">+5% Fee + $0.25</div>
         <h3>Monto en CNY:</h3>
         <input type="number" id="cny" placeholder="Ingrese el Monto en CNY" oninput="convertirCNY()">
         
@@ -74,10 +74,11 @@
     <script>
         function convertirCNY() {
             const tasaConversion = 0.18; // 1 CNY = 0.18 USD
-            const fee = 1.05; // 6% extra
+            const feePorcentaje = 1.05; // 5% extra
+            const feeFijo = 0.25; // $0.25 fijo
             const cny = document.getElementById('cny').value;
             let usd = (cny * tasaConversion).toFixed(2);
-            usd = (usd * fee).toFixed(2); // Aplicar el 6% extra
+            usd = (usd * feePorcentaje + feeFijo).toFixed(2); // Aplicar el 5% extra + $0.25 fijo
             document.getElementById('resultado').innerText = usd + ' USD';
         }
     </script>
