@@ -81,9 +81,9 @@
     <script>
         function convertirCNY() {
             const tasaConversion = 0.18; // 1 CNY = 0.18 USD
-            const feePorcentaje = 1.05; // 5% extra
+            const feePorcentaje = 1.06; // 6% extra
             const cny = document.getElementById('cny').value;
-            let usd = (cny * tasaConversion * feePorcentaje).toFixed(2); // Solo aplicar el 5%
+            let usd = (cny * tasaConversion * feePorcentaje).toFixed(2); // Aplicar solo el 6%
             document.getElementById('resultado').innerText = usd + ' USD';
         }
     </script>
